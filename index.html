@@ -1,9 +1,43 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8">
+		<title>Hangman</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  		
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-</body>
+  		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<script type="text/javascript" src="assets/javascript/game.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Hangman</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<img src="assets/images/sushi.jpg" width="200px" alt="#">
+				</div>
+				<div class="col-md-8">
+					<h2>Press any key to get started!</h2>
+					<h2>Wins</h2>
+					<span id="wins"></span>
+					<h2>Current Word</h2>
+					<span id="currentWord"></span>
+					<h2>Number of guess remaining</h2>
+					<span id="guesses"></span>
+					<h2>Letters already guessed</h2>
+					<span id="usedLetters"></span>
+				</div>
+			</div>
+		</div>
+		
+
+	</body>
 </html>
