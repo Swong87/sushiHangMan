@@ -11,14 +11,14 @@
 
   		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<script type="text/javascript" src="assets/javascript/game.js"></script>
+		
 	</head>
 	<body>
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-fixed-top">
 		  <div class="container">
 		    <div class="navbar-header">
 		      <a class="navbar-brand" href="index.html">
-		        <img alt="Brand" src="assets/images/brand.png" width=30px>
+		        <img alt="Brand" src="assets/images/brand.png" width=80px>
 		      </a>
 		    </div>
 		  </div>
@@ -33,30 +33,30 @@
 				<div class="col-md-4">
 					<div class="panel panel-success">
 					  <div class="panel-heading">
-					    <h3 class="panel-title">Sushi Time!</h3>
+					    <h3 class="panel-title">Letters Already Guessed</h3>
 					  </div>
 					  <div class="panel-body">
-					    <img src="assets/images/sushi.png" id="victory" width=200px alt="sushi">
-					    <p id="yay"></p>
+					  	<h3><span id="usedLetters"></span></h3>
+					    <img src="assets/images/sushi.png" id="victory" width=250px alt="sushi">
+					    <h1 id="yay"></h1>
 					  </div>
 					</div>
 				</div>
 				<div class="col-md-8">
 					<h2 class="text-success">Types Of Sushi</h2>
-					<h3>(Press Any Letter To Get Started)</h3>
+					<h3>Press 'Enter' to generate a word</h3>
+					<h3>(Press Any Letter To Guess)</h3>
 					<h2 class="text-success">Wins</h2>
-					<h3><span id="wins"></span></h3>
+					<h3><span id=wins></span></h3>
 					<h2 class="text-success">Current Word</h2>
 					<h3><span id="currentWord"></span></h3>
-					<h2 class="text-success">Number of guess remaining</h2>
-					<h3><span><img src="assets/images/lives6.png" id="lives"></span></h3>
-
-					<h2 class="text-success">Letters already guessed</h2>
-					<h3><span id="usedLetters"></span></h3>
+					<h2 class="text-success">Number of guesses remaining</h2>
+					<h3><span><img width="400px" src="assets/images/lives6.png" id="lives"></span></h3>
+					
 				</div>
 			</div>
 		</div>
-		
+		<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 	</body>
 </html>
