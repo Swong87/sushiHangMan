@@ -14,26 +14,45 @@
 		<script type="text/javascript" src="assets/javascript/game.js"></script>
 	</head>
 	<body>
-		<div class="container-fluid">
+		<nav class="navbar navbar-default">
+		  <div class="container">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="index.html">
+		        <img alt="Brand" src="assets/images/brand.png" width=30px>
+		      </a>
+		    </div>
+		  </div>
+		</nav>
+		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h1>Hangman</h1>
+					<h1 class="text-center"><img src="assets/images/title.png"></h1>
 				</div>
 			</div>
-			<div class="row">
+			<div class="text-center" class="row">
 				<div class="col-md-4">
-					<img src="assets/images/sushi.jpg" width="200px" alt="#">
+					<div class="panel panel-success">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Sushi Time!</h3>
+					  </div>
+					  <div class="panel-body">
+					    <img src="assets/images/sushi.png" id="victory" width=200px alt="sushi">
+					    <p id="yay"></p>
+					  </div>
+					</div>
 				</div>
 				<div class="col-md-8">
-					<h2>Press any key to get started!</h2>
-					<h2>Wins</h2>
-					<span id="wins"></span>
-					<h2>Current Word</h2>
-					<span id="currentWord"></span>
-					<h2>Number of guess remaining</h2>
-					<span id="guesses"></span>
-					<h2>Letters already guessed</h2>
-					<span id="usedLetters"></span>
+					<h2 class="text-success">Types Of Sushi</h2>
+					<h3>(Press Any Letter To Get Started)</h3>
+					<h2 class="text-success">Wins</h2>
+					<h3><span id="wins"></span></h3>
+					<h2 class="text-success">Current Word</h2>
+					<h3><span id="currentWord"></span></h3>
+					<h2 class="text-success">Number of guess remaining</h2>
+					<h3><span><img src="assets/images/lives6.png" id="lives"></span></h3>
+
+					<h2 class="text-success">Letters already guessed</h2>
+					<h3><span id="usedLetters"></span></h3>
 				</div>
 			</div>
 		</div>

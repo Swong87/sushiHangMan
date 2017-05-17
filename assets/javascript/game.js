@@ -16,36 +16,93 @@ var words = [
 var randomWord = words[Math.floor(Math.random() * words.length)];
 console.log(randomWord);
 var life = 6;
+console.log(words[1]);
 //Generates the same number of blanks spaces for the random word
 var hiddenWord = Array(randomWord.length);
 //Array of letters the user guesses
-var guessedLetters = [];
+
+var wrongLetters = [];
+var twins = document.getElementById("wins");
+var winCount = 0;
+var newWord = new Array(randomWord.length);
+
+for (var i = 0; i < newWord.length; i++){
+	newWord[i] = "_ ";
+}
+
+function printNewWord(){
+	for (var i = 0; i < newWord.length; i++){
+	var guessField = document.getElementById("currentWord");
+	var blank = document.createTextNode(newWord[i]);
+	guessField.appendChild(blank);
+	}
+}
 
 //onkeyup function
 document.onkeyup = function(event) {
 	//Determines what key was pressed
 	var userGuess = event.key;
 	userGuess = userGuess.toUpperCase();
-	guessedLetters.push(userGuess);
 
-	console.log(guessedLetters);
-	console.log(userGuess);
-	//checks if user guess is correct or not 
 	for (var i = 0; i < randomWord.length; i++){
 		if(randomWord[i] === userGuess){
+			newWord[i] = userGuess + " ";
 			var correct = true;
-			alert("That's it!");
-		} else {
-			correct = false;
 		}
-		if (!correct) {
-			usedLetters.textContent = guessedLetters;
-		}
+	
 	}
-	//Disable repeated guesses
-	for (var i = 0; i < guessedLetters.length-1; i++){
-		if (userGuess === guessedLetters[i]){
-			alert("STOP pressing that!");
+
+	var guessField = document.getElementById("currentWord");
+			guessField.innerHTML=""; 
+			printNewWord();
+
+	
+
+//checks if user guess is correct or not 
+	for (var i = 0; i < randomWord.length; i++){
+		if(randomWord[i] === userGuess){
+			correct = true;
 		}
-	}
+		console.log(correct);
+		console.log(wrongLetters);
+		console.log(userGuess);
+		var finish = true;
+		for (var i = 0; i < newWord.length; i++){
+			if(newWord[i] === "_ "){
+				finish = false;
+			}
+		}
+		if(finish){
+			var victory = document.getElementById("victory");
+		    victory.src = "assets/images/victory.png";
+		    var yay = document.getElementById("yay");
+		    yay.textContent = "You Win!"
+			winCount++;
+			twins.textContent = winCount;
+		}
+		
+		//once you get six wrong letters, you lose
+		if(life === 1){
+			window.alert("You lose.");
+		}
 } //end of onkeyup function
+		if (!correct) {
+			wrongLetters.push(userGuess);
+			usedLetters.textContent = wrongLetters;
+			life = life - 1;
+			//lives.textContent = life;
+			var sushi = document.getElementById("lives");
+		    sushi.src = "assets/images/lives" + life + ".png";
+		}
+		for (var x = 0; x < wrongLetters.length-1; x++){
+			if (userGuess === wrongLetters[x]){
+				life = life + 0;
+				lives.textContent = life;
+			}
+		}
+	}
+function init(){
+	printNewWord();
+}
+
+window.onload = init;
