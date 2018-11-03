@@ -7,7 +7,7 @@ window.addEventListener( "load", function( windowLoadE ) {
         // }
         letter = String.fromCharCode( i );
 		button = document.createElement( "button" );
-		button.classList.add( "letter" );
+		button.classList.add( "letter", "clearBtn" );
         button.innerHTML = letter;
         button.setAttribute( "data-letter", letter );
         button.onclick = function( e ) { setLetter( this.getAttribute( "data-letter" ) ); };
@@ -117,7 +117,7 @@ window.addEventListener( "load", function( windowLoadE ) {
 		// if guess is incorrect
 		if (!correct && wrongLetters.indexOf(currentGuess) < 0) {
 			wrongLetters.push(currentGuess);
-			usedLetters.textContent = wrongLetters;
+			usedLetters.textContent = wrongLetters.join(" ");
 			life--;
 			chompAudio.play();
 			sushi.src = "assets/images/lives" + life + ".png";

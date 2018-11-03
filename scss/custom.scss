@@ -1,3 +1,28 @@
+body {
+    background-color: #2b2b2b;
+    color: #aaa;
+    font-family: 'Montserrat', sans-serif;
+}
+#startBtn {
+    margin: 20px 0;
+}
+.clearBtn {
+    background-color: transparent;
+    background-image: linear-gradient(#d1d1d13a, transparent);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 5px 10px #aaaaaa;
+    color: #aaa;
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        box-shadow: 1px 3px 8px #aaaaaa;
+    }
+}
+h2, h3 {
+    color: #42DCA3;
+}
 img {
     width: 100%;
 }
@@ -6,13 +31,25 @@ img {
 }
 #buttonsHolder {
     display: none;
+    margin: 20px 0;
+}
+#wins, #currentWord {
+    color: #aaa;
 }
 .letter {
-    width: 30px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    text-align: center;
     margin: 5px;
-    background-color: transparent;
-    background-image: linear-gradient(to bottom right, transparent 50%, #ededed);
-    border: none;
+}
+.usedLetterContainer {
+    border: 2px solid #aaa;
     border-radius: 5px;
-    box-shadow: 2px 5px 10px #aaaaaa;
+    height: 38px;
+    width: 50%;
+    margin: auto;
+}
+.lives {
+    width: 400px;
 }
