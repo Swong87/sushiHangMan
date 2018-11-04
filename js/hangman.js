@@ -139,6 +139,7 @@ window.addEventListener( "load", function( windowLoadE ) {
 			} else {
 				// victory.src = "assets/images/victory.png";
 				yay.textContent = "You Win!"
+				sushi.src = "assets/images/victory.png";
 				winsCount++;
 				wins.textContent = winsCount;
 				winAudio.play();
